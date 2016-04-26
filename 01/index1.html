@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>Input and Setup</title>
+<link rel="stylesheet" media="screen" title="no title" charset="utf-8" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+  <h1>Input and Setup</h1>
+
+    <h3>My hero is <span ng-bind="hero"></span></h3>
+    <div class="row">
+      <div class="six colums">
+
+    <label for="">My hero is</label>
+      <input class="u-full-width" type="text" ng-model="hero" ng-init="hero='deadpool'" placeholder="You're hero isn't deadpool?"></input>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
