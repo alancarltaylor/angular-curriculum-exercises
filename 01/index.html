@@ -1,43 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="jsonification">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" media="screen" title="no title" charset="utf-8" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-    <script type="text/javascript">
-      var app = angular.module('jsonification', []);
-      app.controller('JsonController', function ($scope) {
-        $scope.jsonObject = {
-          "key": "value",
-          "comicbook": true,
-          "Angular": [
-            2,6,9
-          ],
-          "something" : {
-            "wicked" : "boston",
-            "420" : "denver"
-          }
-        }
-
-      });
-    </script>
-
-    <title>Expressions and Filters</title>
-  </head>
-  <body>
-    <div class="container" ng-controller="JsonController">
-      <h1>Expressions and filters</h1>
-
-      <h3>Not filtered</h3>
-      <pre>
-        <code>{{jsonObject}}</code>
-      </pre>
-      <h3>Filtered with json</h3>
-      <pre>
-        <code>{{ jsonObject | json }}</code>
-      </pre>
-
-    </div>
-
-  </body>
+<html ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>{{greeting}} World!</title>
+  <link rel="stylesheet" media="screen" title="no title" charset="utf-8" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+</head>
+<body>
+  <p>{{1 + 6}}</p>
+  <br>
+  <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
+    <p>{{ greeting }} world!</p>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+</body>
 </html>
