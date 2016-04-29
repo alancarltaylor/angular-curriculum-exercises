@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>Built-in-directives</title>
+  <link rel="stylesheet" media="screen" title="no title" charset="utf-8" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+</head>
+<body ng-init="names=['Harry', 'Ron', 'Hermione', 'Sirius', 'Hedwig', 'Tonks']" >
+<div class="container">
+<h2>3 Built in Directives we have used so far</h2>
+<ol>
+  <li>ng-hide</li>
+  <li>ng-bind</li>
+  <li>ng-model</li>
+</ol>
+<ul>
+  <li ng-repeat='foo in names'>
+    {{foo}}
+   </li>
+</ul>
+<div ng-init="symbols=['Spades', 'Clubs', 'Hearts', 'Diamonds']">
+<ul>
+  <li ng-repeat='symbol in symbols'>
+    {{symbol}}
+   </li>
+</ul>
+</div>
+<div ng-init="myArr=['1','1','2','5','6','9','9','9']">
+  <ul>
+    <li ng-repeat='item in myArr track by $index'>
+      {{item}}
+    </li>
+  </ul>
+</div>
+<div ng-init="myObj={'name': 'Alan', 'age': '31', 'height' : '6'}">
+  <ul>
+    <li ng-repeat='key in myObj'>
+      {{key}}
+    </li>
+  </ul>
+</div>
+<div>
+  <input ng-model="password" type="text">
+  <button class="button-primary" ng-hide="password.length < 6">Valid Password!</button>
+</div>
+</div>
+</body>
+</html>
