@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="firstApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Intro to Controllers</title>
+  <link rel="stylesheet" media="screen" title="no title" charset="utf-8" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+<div ng-controller="MyFirstController">
+  <h1>My name is: {{name}}</h1>
+  <input ng-model="name" type="text" placeholder="What is your name">
+</div>
+</body>
+</html>
