@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Expressions and Filters</title>
+<link rel="stylesheet" media="screen" title="no title" charset="utf-8" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+  <p>1 + 2 = {{1 + 2}}</p>
+  <p>My name is {{"BoJack" +  " Horseman"}}</p>
+  <p>The array [99, 43, 22] is {{[99, 43, 22].length}} items long</p>
+  <p>{{3.14159265359 | currency : "€"}}</p>
+  <div class="row">
+    <div class="six colums">
+      <label for="saySomething">Say Something</label>
+      <input class="u-full-width" id="saySomething" type="text" ng-model="saySomething">
+      <p>Yelling: {{saySomething | uppercase}}</p>
+      <p>Whispering: {{saySomething | lowercase}}</p>
+    </div>
+  </div>
+  <p> {{3.14159265359 | number:3}} </p>
+  <p> {{3.14159265359 | number:6}} </p>
+  <p> {{3.14159265359 | number:1}} </p>
+  <div class="row">
+    <div class="six columns">
+      <label for="piNumbers">How many numbers of Pi do you want?</label>
+      <select class="u-full-width" id="piNumbers" ng-model="piNumbers">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+      <p>Here you go, pi with {{piNumbers}} digits</p>
+      <p>{{3.14159265359 | number: piNumbers }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="six colums">
+      <label for="taxCalculator">Tip Calculator</label>
+      <p>How much did your meal cost?   <input class="u-half-width" id="taxCalculator" type="text" ng-model="taxCalculator"></p>
+      <p>What tip do you want to give?</p>
+      <select class="u-half-width" id="taxCalculator" ng-model="tip">
+        <option value=".15">15%</option>
+        <option value=".20">20%</option>
+        <option value=".25">25%</option>
+      </select>
+      <h3>Subtotal: {{taxCalculator | currency}}</h3>
+      <h3>Tax: {{tip * taxCalculator | currency}}</h3>
+    </div>
+  </div>
+
+  <div>{{this}}</div>
+
+  <div class="row" ng-controller="MainController">
+    <div class="six colums" ng-show="notClicked">
+      <h2>Please fill out the following</h2>
+      <label for="boysName">Boy's Name</label>
+      <input class="u-full-width" id="boysName" type="text" ng-model="boysName">
+      <label for="adjective">Adjective</label>
+      <input class="u-full-width" id="adjective" type="text" ng-model="adjective">
+      <label for="pluralNoun1">Plural Noun</label>
+      <input class="u-full-width" id="pluralNoun1" type="text" ng-model="pluralNoun1">
+      <label for="pluralNoun2">Plural Noun</label>
+      <input class="u-full-width" id="pluralNoun2" type="text" ng-model="pluralNoun2">
+      <label for="insect">An insect, plural</label>
+      <input class="u-full-width" id="insect" type="text" ng-model="insect">
+      <label for="pluralNoun3">Plural Noun</label>
+      <input class="u-full-width" id="pluralNoun3" type="text" ng-model="pluralNoun3">
+      <label for="verb">A verb ending in "s"</label>
+      <input class="u-full-width" id="verb" type="text" ng-model="verb">
+      <button class="button-primary" ng-click="generate()">Generate!</button>
+    </div>
+    <h2 ng-hide="notClicked">Your MadLib Results</h2><br>
+    <h3 ng-hide="notClicked">I'm in love with <span ng-bind="boysName"></span>. He's so <span ng-bind="adjective"></span>! He has big flat <span ng-bind="pluralNoun1"></span>, and when our <span ng-bind="pluralNoun2"></span> meet, I get <span ng-bind="insect"></span> in my stomach. I've fallen for him like a ton of <span ng-bind="pluralNoun3"></span>, and he <span ng-bind="verb"></span> for me, too. But I think he's got another girlfriend. What should I do?</h3>
+  </div>
+
+</div>
+<script>
+var app = angular.module('app', []);
+
+app.controller('MainController', function($scope) {
+  $scope.notClicked = true;
+  $scope.generate = function() {
+    $scope.notClicked = false;
+  };
+});
+
+</script>
+</body>
+</html>
