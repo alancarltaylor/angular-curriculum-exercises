@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app = "filters">
+<head>
+  <meta charset="UTF-8">
+  <title>Filters</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
+
+  <script src="app.js" type="text/javascript"></script>
+</head>
+<body ng-controller = "myCtrl">
+  <form action="#">
+    <input type="text" ng-model="input">
+  </form>
+
+  <div>{{input | camel}}</div>
+</body>
+</html>
