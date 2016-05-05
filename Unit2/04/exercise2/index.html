@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app = "filters">
+<head>
+  <meta charset="UTF-8">
+  <title>Filters</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
+  <script src="app.js" type="text/javascript"></script>
+</head>
+<body ng-controller = "myCtrl">
+  <h2>My Calculator</h2>
+  <form action="#" ng-submit>
+  <label for="#">Operation</label>
+    <select ng-model="operation">
+      <option value="add">add</option>
+      <option value="subtract">subtract</option>
+      <option value="multiply">multiply</option>
+      <option value="divide">divide</option>
+    </select><br>
+    <label>First Value:   </label>
+    <input type="number" ng-model="input1"><br>
+    <label>Second Value: </label>
+    <input type="number" ng-model="input2"><br>
+    <input type="submit" ng-bind="calculate()"value="calculate!">
+  </form>
+
+  <div>{{answer}}</div>
+</body>
+</html>
