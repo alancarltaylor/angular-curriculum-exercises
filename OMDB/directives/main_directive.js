@@ -12,3 +12,9 @@ angular.module('MovieSearch')
       templateUrl: './partials/moviePost.html'
     }
   }])
+  .directive('mbVote',['$log', function ($log) {
+   return {
+     restrict: 'E',
+     templateUrl: './partials/votes.html'
+   }
+ }])
