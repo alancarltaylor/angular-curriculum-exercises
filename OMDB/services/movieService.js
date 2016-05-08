@@ -1,5 +1,5 @@
 angular.module('MovieSearch')
-.service('mainService',['$http','$log',function($http,$log) {
+.service('movieService',['$http','$log',function($http,$log) {
   var self = this
   var movieObj = {}
   this.movieAPI = 'https://g-omdbapi.herokuapp.com'

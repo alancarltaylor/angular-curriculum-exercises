@@ -1,7 +1,7 @@
-angular.module("MovieSearch")
-.controller("Ctrl", ["$scope", "mainService", function($scope, mainService){
-  $scope.vm = {};
-  $scope.vm = mainService
-  // $scope.test = mainService.test;
+angular.module('MovieSearch')
+  .controller('Ctrl',['$scope','$log','movieService',function($scope, $log, movieService) {
+
+    $scope.vm = {}
+    $scope.vm = movieService
 
 }])

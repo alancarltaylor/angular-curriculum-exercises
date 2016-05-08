@@ -2,19 +2,27 @@ angular.module('MovieSearch')
   .directive('navBar',['$log',function($log) {
     return {
       restrict:'E',
-      templateUrl: './partials/navBar.html'
+      templateUrl: './partials/nav.html',
+      scope: {
+        title: "=?",
+        movies: '='
+      }
     }
   }])
-
-  .directive('moviePost',['$log', function($log) {
+  .directive('moviePost',['$log',function($log) {
     return{
       restrict: 'E',
-      templateUrl: './partials/moviePost.html'
+      templateUrl: './partials/movie_post.html',
+      scope: {
+        title: "=?",
+        movies: '=?'
+      }
+
     }
   }])
   .directive('mbVote',['$log', function ($log) {
-   return {
-     restrict: 'E',
-     templateUrl: './partials/votes.html'
-   }
- }])
+    return {
+      restrict: 'E',
+      templateUrl: './partials/votes.html'
+    }
+  }])
