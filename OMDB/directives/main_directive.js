@@ -17,7 +17,6 @@ angular.module('MovieSearch')
         title: "=?",
         movies: '=?'
       }
-
     }
   }])
   .directive('mbVote',['$log', function ($log) {
