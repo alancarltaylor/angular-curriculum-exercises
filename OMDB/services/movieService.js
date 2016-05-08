@@ -9,7 +9,7 @@ angular.module('MovieSearch')
   this.getMovies = function(movieName) {
     console.log('here');
     var movie = movieName.split(' ').join('+');
-    return $http.get(self.movieAPI +'/?s='+ movie +'&y=&plot=short&r=json')
+    return $http.get(self.movieAPI +'/?t='+ movie +'&y=&plot=short&r=json')
       .then(function(data) {
       $log.info(data)
       if (data.data.Error){
