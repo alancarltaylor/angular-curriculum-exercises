@@ -5,7 +5,7 @@ angular.module('MovieSearch', ['angularMoment','ngRoute'])
             .when('/', {
                 template : '<movie-post title="vm.title" movies="vm.movies"></movie-post>'
             }).when('/details/:id', {
-                template : '<h1>A New Page Example <a ng-href="/">Go Home</a></h1>'
+                template : '<single-movie></single-movie>'
             }).when('/404', {
                 templateUrl:'partials/error.html'
             }).otherwise({

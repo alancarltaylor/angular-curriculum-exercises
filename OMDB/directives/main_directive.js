@@ -26,3 +26,9 @@ angular.module('MovieSearch')
       templateUrl: './partials/votes.html'
     }
   }])
+  .directive('singleMovie',['$log', function ($log) {
+    return {
+      restrict: 'E',
+      templateUrl: './partials/single_movie.html'
+    }
+  }])
