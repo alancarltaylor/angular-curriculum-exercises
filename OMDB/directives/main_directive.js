@@ -28,6 +28,11 @@ angular.module('MovieSearch')
   .directive('singleMovie',['$log', function ($log) {
     return {
       restrict: 'E',
-      templateUrl: './partials/single_movie.html'
+      templateUrl: './partials/single_movie.html',
+      scope: {
+        title: "=?",
+        movie: "=?",
+        message: "=?"
+      }
     }
   }])

@@ -1,1 +1,1 @@
-angular.module('MovieSearch', ['angularMoment','ngRoute'])
+angular.module('MovieSearch', ['angularMoment','ngRoute']);

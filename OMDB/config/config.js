@@ -4,7 +4,8 @@ angular.module("MovieSearch")
             .when('/', {
                 template : '<movie-post title="vm.title" movies="vm.movies"></movie-post>'
             }).when('/details/:id', {
-                template : '<single-movie></single-movie>'
+                template : '<single-movie movie="movies"></single-movie>',
+                controller : 'Ctrl'
             }).when('/404', {
                 templateUrl:'../partials/error.html'
             }).otherwise({
