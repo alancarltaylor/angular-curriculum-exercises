@@ -1,17 +1,24 @@
 // Update with your config settings.
-// require('dotenv').load();
+require('dotenv').load();
 
 module.exports = {
 
   development: {
     client: 'postgresql',
-    connection: "postgres://localhost/pirates_development",
+    connection: process.env.DATABASE_URL,
     pool: {
-      min: 2,
-      max: 10
+      min: 1,
+      max: 1
     }
   },
-  seeds: {
-    directory: '/seeds'
+
+  production: {
+    client: 'postgresql',
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 1,
+      max: 1
+    }
   }
+
 };
