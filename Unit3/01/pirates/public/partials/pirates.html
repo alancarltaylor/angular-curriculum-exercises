@@ -1,3 +1,29 @@
-<div>
-  Pirates
+<div class="container">
+<main style="width:40%;padding-bottom:20px;">
+  <form name="pirateform" novalidate ng-submit="formSubmit()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name:</label>
+      <input type="text" class="form-control" placeholder="name" ng-model="formData.name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Poison:</label>
+      <input type="text" class="form-control" placeholder="poison" ng-model="formData.poison">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Accessories:</label>
+      <input type="text" class="form-control" placeholder="accessories" ng-model="formData.accessory">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Image Url:</label>
+      <input type="text" class="form-control" placeholder="Image Url" ng-model="formData.image_url">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</main>
+<div ng-repeat="pirate in pirates"> 
+  <h1>{{pirate.name}}</h1>
+  <img src="{{pirate.image_url}}" alt="">
+  <p>Poison: {{pirate.poison}}</p>
+  <p>Accessory: {{pirate.accessory}}</p>
+</div>
 </div>
