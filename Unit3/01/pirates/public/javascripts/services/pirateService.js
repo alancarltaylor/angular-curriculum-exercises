@@ -10,6 +10,7 @@ angular.module('pirates')
     },
     addPirate: function (newPirateData) {
       return $http.post('/api/pirates/add', newPirateData);
-    }
+    },
+    
   }
 })

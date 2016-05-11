@@ -19,4 +19,7 @@ angular.module("pirates").controller("ctrl", ["$scope", "PiratesService", "$log"
   $scope.pirates.push(newPirate);
 }
 
+  
+
+
 }])
