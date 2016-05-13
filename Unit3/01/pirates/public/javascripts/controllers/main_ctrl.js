@@ -19,7 +19,16 @@ angular.module("pirates").controller("ctrl", ["$scope", "PiratesService", "$log"
   $scope.pirates.push(newPirate);
 }
 
-  
+  $scope.deletePirate = function(departingPirate){
+    console.log("you clicked delete!");
+    PiratesService.deletePirate(departingPirate.id)
+    .then(function(){
+      var index = $scope.pirates.indexOf(departingPirate);
+      $scope.pirates.splice(index, 1);
+    })
+  }
+
+
 
 
 }])

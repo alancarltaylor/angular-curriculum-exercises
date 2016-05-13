@@ -24,13 +24,13 @@ router.post('/pirates/add', function (req, res, next) {
   })
 })
 
-router.post('/pirates/delete', function (req, res, next) {
+router.delete('/pirates/delete/:id',function(req,res,next) {
   return knex('pirates')
-  .where({id: id})
-  .delete()
-  .then(function (newPirate) {
-    res.json(newPirate);
-  })
+    .where({id:req.params.id})
+    .del()
+    .then(function() {
+      res.end()
+    })
 })
 
 
