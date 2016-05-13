@@ -1,0 +1,17 @@
+Editing {{myPirate.name}}  ID: {{myPirate.id}}
+<form name='edit_form'  ng-submit="editPirate()" class='form-group'>
+  <label for="">Name</label>
+  <input name='name' type="text"  ng-model="myPirate.name">
+
+  <label for="">Poison</label>
+  <input name='poison' type="text"  ng-model="myPirate.poison">
+
+  <label for="">Accessory</label>
+  <input name='accessory' type="text"  ng-model="myPirate.accessory">
+
+  <label for="">Image URL</label>
+  <input name='image_url' type="text"  ng-model="myPirate.image_url">
+
+  <input type="submit">
+
+</form>

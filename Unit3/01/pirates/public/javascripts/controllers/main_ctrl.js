@@ -1,4 +1,4 @@
-angular.module("pirates").controller("ctrl", ["$scope", "PiratesService", "$log", function($scope, PiratesService, $log){
+angular.module("pirates").controller("Ctrl", ["$scope", "PiratesService", "$log", function($scope, PiratesService, $log){
 
   $scope.formData = {};
 
@@ -27,6 +27,14 @@ angular.module("pirates").controller("ctrl", ["$scope", "PiratesService", "$log"
       $scope.pirates.splice(index, 1);
     })
   }
+
+  // $scope.editPirate = function(changingPirate){
+  //   console.log("you clicked to edit pirate " + changingPirate.id)
+  //   PiratesService.editPirate(changingPirate.id)
+  //   .then(function(){
+  //
+  //   })
+  // }
 
 
 

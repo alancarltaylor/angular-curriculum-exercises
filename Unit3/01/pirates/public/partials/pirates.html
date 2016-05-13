@@ -22,9 +22,10 @@
 </main>
 <div ng-repeat="pirate in pirates">
   <h1>{{pirate.name}}</h1>
-  <img src="{{pirate.image_url}}" alt="">
+  <img ng-src="{{pirate.image_url}}" alt="">
   <p>Poison: {{pirate.poison}}</p>
   <p>Accessory: {{pirate.accessory}}</p>
   <button ng-click="deletePirate(pirate)">Delete</button>
+  <a href="/pirate/edit/{{pirate.id}}" class="btn btn-primary">Edit</a>
 </div>
 </div>
