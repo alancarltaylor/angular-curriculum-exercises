@@ -1,4 +1,5 @@
-angular.module("pirates").controller("Ctrl", ["$scope", "PiratesService", "$log", function($scope, PiratesService, $log){
+angular.module("pirates")
+.controller("Ctrl", ["$scope", "PiratesService", "$log", function($scope, PiratesService, $log){
 
   $scope.formData = {};
 
