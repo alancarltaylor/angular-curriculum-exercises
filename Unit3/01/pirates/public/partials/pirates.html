@@ -1,6 +1,8 @@
 <div class="container">
 <main style="width:40%;padding-bottom:20px;">
-  <form name="pirateform" novalidate ng-submit="formSubmit()">
+  <button ng-click = "showForm()" class="btn btn-default">Add Pirate</button>
+
+  <form ng-show=formVisible name="pirateform" novalidate ng-submit="formSubmit()">
     <div class="form-group">
       <label for="exampleInputEmail1">Name:</label>
       <input type="text" class="form-control" placeholder="name" ng-model="formData.name">

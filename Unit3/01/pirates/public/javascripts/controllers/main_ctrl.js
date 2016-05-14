@@ -3,6 +3,11 @@ angular.module("pirates")
 
   $scope.formData = {};
 
+  $scope.formVisible = false;
+  $scope.showForm = function(){
+    return $scope.formVisible = !$scope.formVisible
+  }
+
   PiratesService.all().then(function (pirates) {
     $scope.pirates = pirates;
     $log.info($scope.pirates);
