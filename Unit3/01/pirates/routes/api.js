@@ -154,5 +154,30 @@ router.post('/signup', function(req, res, next) {
   //  send back id, email, name, token
 });
 
+router.post('/login', function(req,res,next){
+
+  knex('users')
+  .where('email', '=', req.body.email.toLowerCase())
+  .first()
+  .then(function(response){
+    if(response && bcrypt.compareSync(req.body.password, response.password)){
+
+        const user = response[0];
+        const token = jwt.sign({ id: user.id}, process.env.JWT_SECRET);
+        res.json({
+          id: response.id,
+          email: response.email,
+          name: response.name,
+          token: token
+        })
+
+
+     res.redirect('/');
+    } else {
+      res.json({errors: 'Invalid username or password'});
+    }
+  });
+});
+
 
 module.exports = router;
