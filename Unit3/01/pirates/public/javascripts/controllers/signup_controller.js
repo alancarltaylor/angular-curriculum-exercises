@@ -6,13 +6,14 @@
       $scope.user = {}
       var user = $scope.user;
 
+      $scope.createUser = function(){
       userService.addUser(user).then(function(response){
-        $rootScope.user = response.data;
-        $window.localStorage.setItem('token', response.data.token);
+        $rootScope.user = response;
+        $window.localStorage.setItem('token', response.token);
         $scope.user = {};
         $location.path('/')
       })
-
+    }
 
 
 

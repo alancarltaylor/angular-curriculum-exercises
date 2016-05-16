@@ -8,7 +8,7 @@ angular.module('pirates')
     },
 
     addUser: function(user){
-      return $http.get('/api/users', user).then(function(res){
+      return $http.post('/api/signup', user).then(function(res){
         return res.data;
       })
   },
