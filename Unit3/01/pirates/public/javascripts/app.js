@@ -47,9 +47,9 @@ angular.module('pirates').run(function($rootScope, $location, $window) {
     // and we don't have a token
     // then redirect to the homepage
 
-    // if (next.$$route.requiresLogin && !localStorage.getItem('token')) {
-    //   $location.path('/');
-    // }
+    if (next.$$route.requiresLogin && !localStorage.getItem('token')) {
+      $location.path('/');
+    }
 
   });
 });
