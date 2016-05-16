@@ -9,6 +9,13 @@ router.get('/', function(req, res, next) {
   res.json({ title: 'Express' });
 });
 
+router.get('/users',function(req,res,next) {
+  return knex('users')
+  .then(function(users) {
+    res.json(users)
+  })
+})
+
 router.get('/me', function(req, res, next){
   // get authorization header
   // "bearer 897asdlkfklsdksd234095" OR nothing
@@ -161,9 +168,7 @@ router.post('/login', function(req,res,next){
   .first()
   .then(function(response){
     if(response && bcrypt.compareSync(req.body.password, response.password_hash)){
-        console.log("response", response);
         const user = response;
-        console.log("user: ", user);
         const token = jwt.sign({ id: user.id}, process.env.JWT_SECRET);
         res.json({
           id: user.id,
