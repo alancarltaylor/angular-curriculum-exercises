@@ -160,14 +160,15 @@ router.post('/login', function(req,res,next){
   .where('email', '=', req.body.email.toLowerCase())
   .first()
   .then(function(response){
-    if(response && bcrypt.compareSync(req.body.password, response.password)){
-
-        const user = response[0];
+    if(response && bcrypt.compareSync(req.body.password, response.password_hash)){
+        console.log("response", response);
+        const user = response;
+        console.log("user: ", user);
         const token = jwt.sign({ id: user.id}, process.env.JWT_SECRET);
         res.json({
-          id: response.id,
-          email: response.email,
-          name: response.name,
+          id: user.id,
+          email: user.email,
+          name: user.name,
           token: token
         })
 

@@ -1,5 +1,5 @@
 angular.module("pirates")
-.controller("Ctrl", ["$scope", "PiratesService", "$log", function($scope, PiratesService, $log){
+.controller("Ctrl", ["$scope", "PiratesService", "$log", "$location", function($scope, PiratesService, $log, $location){
 
   $scope.formData = {};
 
@@ -41,6 +41,11 @@ angular.module("pirates")
   //
   //   })
   // }
+
+  $scope.logoutUser = function() {
+          localStorage.clear();
+          $location.path('/users/login');
+        }
 
 
 
